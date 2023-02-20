@@ -1,0 +1,31 @@
+#include <stdlib.h>
+#include <time.h>
+/* more headers goes there */
+# include <stdio.h>
+
+/* betty style doc for function main goes there */
+/**
+ * main - Program entry point
+ * This program will assign a random numbe
+ *
+ * Return: 0 on success. Error code otherwise
+ */
+int main(void)
+{
+	int i;
+	int j;
+
+	for (i = 0; i < 10 ; i++)
+	{
+		putchar(i + '0');
+		j = 0;
+		while (j != 9)
+		{
+			putchar(',');
+			putchar(' ');
+			j++;
+		}
+	}
+	putchar('\n');
+	return (0);
+}
