@@ -1,0 +1,24 @@
+/* more headers goes there */
+# include <stdio.h>
+
+/* betty style doc for function main goes there */
+/**
+ * main - Program entry point
+ * This program prints the alphabet in lowercase without e and q
+ *
+ * Return: 0 on success. Error code otherwise
+ */
+int main(void)
+{
+	char c;
+
+	for (c = 'a'; c <= 'z'; c++)
+	{
+		if (c !='e' && c != 'q')
+		{
+			putchar(c);
+		}
+	}
+	putchar('\n');
+	return (0);
+}
