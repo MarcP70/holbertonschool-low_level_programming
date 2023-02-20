@@ -1,9 +1,15 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 /* more headers goes there */
+# include <stdio.h>
 
 /* betty style doc for function main goes there */
+/**
+ * main - Program entry point
+ * This program will assign a random number and show if it positive or negative
+ *
+ * Return: 0 on success. Error code otherwise
+ */
 int main(void)
 {
 	int n;
@@ -19,7 +25,7 @@ int main(void)
 		printf("%d is positive\n", n);
 	} else
 	{
-		printf("%d is 0\n", n);
+		printf("%d is zero\n", n);
 	}
 	return (0);
 }
