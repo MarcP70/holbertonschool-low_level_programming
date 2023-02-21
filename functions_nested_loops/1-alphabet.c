@@ -1,13 +1,10 @@
 #include "main.h"
 
 /**
- * main - Program entry point
- * This program use function to prints the alphabet in lowcase
+ * print_alphabet - This function is use to prints the alphabet in lowcase
  *
- * Return: 0 on success. Error code otherwise
  */
 
-/** Function print_alphabet */
 void print_alphabet(void)
 {
 	int i;
