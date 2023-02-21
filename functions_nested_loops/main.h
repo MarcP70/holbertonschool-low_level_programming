@@ -9,3 +9,5 @@ void print_alphabet_x10(void);
 int _islower(int c);
 /* Function prototype _isalpha */
 int _isalpha(int c);
+/* Function prototype print_sign */
+int print_sign(int n);
