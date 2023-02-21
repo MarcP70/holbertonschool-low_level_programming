@@ -30,7 +30,10 @@ void times_table(void)
 				_putchar('0' + dizaine);
 			} else
 			{
-				_putchar(32);
+				if (column != 0)
+				{
+					_putchar(32);
+				}
 			}
 			_putchar('0' + unite);
 		}
