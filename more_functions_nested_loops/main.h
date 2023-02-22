@@ -6,3 +6,5 @@ int _isupper(int c);
 int _isdigit(int c);
 /* Task 2 */
 int mul(int a, int b);
+/* Task 3 */
+void print_numbers(void);
