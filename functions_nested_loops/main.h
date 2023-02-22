@@ -19,3 +19,5 @@ int print_last_digit(int);
 void jack_bauer(void);
 /* Function times_table */
 void times_table(void);
+/* Function add */
+int add(int, int);
