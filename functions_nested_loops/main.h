@@ -21,3 +21,5 @@ void jack_bauer(void);
 void times_table(void);
 /* Function add */
 int add(int, int);
+/* Function print_to_98 */
+void print_to_98(int n);
