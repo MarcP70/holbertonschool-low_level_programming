@@ -1,0 +1,45 @@
+#include <stdlib.h>
+#include <time.h>
+/* more headers goes there */
+# include <stdio.h>
+
+/* betty style doc for function main goes there */
+/**
+ * main - Program entry point
+ * This program prints all possible different combinations of three digits
+ *
+ * Return: 0 on success. Error code otherwise
+ */
+int main(void)
+{
+	int i;
+	int unite;
+	int dizaine;
+	int centaine;
+	int first;
+
+	first = 0;
+
+	for (i = 1; i <= 999 ; i++)
+	{
+		centaine = i / 100;
+		dizaine = (i / 10) % 10;
+		unite = i % 10;
+
+		if (unite > dizaine && dizaine > centaine)
+		{
+			if (first != 0)
+			{
+				putchar(',');
+				putchar(' ');
+			}
+			first = 1;
+			putchar(centaine + '0');
+			putchar(dizaine + '0');
+			putchar(unite + '0');
+		}
+
+	}
+	putchar('\n');
+	return (0);
+}
