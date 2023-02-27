@@ -12,3 +12,5 @@ int _strlen(char *s);
 void _puts(char *str);
 /* Task 4 */
 void print_rev(char *s);
+/* Task 5 */
+void rev_string(char *s);
