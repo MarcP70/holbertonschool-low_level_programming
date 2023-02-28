@@ -7,6 +7,7 @@
  * @dest: array of destination
  * @src: array of source
  *
+ * Return: array of destination
  */
 
 char *_strcat(char *dest, char *src)
