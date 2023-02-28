@@ -22,3 +22,5 @@ void puts_half(char *str);
 void print_array(int *a, int n);
 /* Task 9 */
 char *_strcpy(char *dest, char *src);
+/* Task 10 */
+int _atoi(char *s);
