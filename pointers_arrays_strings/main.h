@@ -2,6 +2,8 @@
 
 /* _putchar */
 int _putchar(char c);
+
+/*_____Project 1/3_____*/
 /* Task 0 */
 void reset_to_98(int *n);
 /* Task 1 */
@@ -24,3 +26,7 @@ void print_array(int *a, int n);
 char *_strcpy(char *dest, char *src);
 /* Task 10 */
 int _atoi(char *s);
+
+/*_____Project 2/3_____*/
+/* Task 0 */
+char *_strcat(char *dest, char *src);
