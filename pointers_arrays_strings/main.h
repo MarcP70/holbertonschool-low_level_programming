@@ -48,3 +48,5 @@ char *leet(char *);
 /*_____Project 3/3______*/
 /* Task 0 */
 char *_memset(char *s, char b, unsigned int n);
+/* task 1 */
+char *_memcpy(char *dest, char *src, unsigned int n);
