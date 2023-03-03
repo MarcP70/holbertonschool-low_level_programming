@@ -13,7 +13,7 @@ int _atoi(char *s)
 {
 	int index = 0;
 	int signe = 1;
-	int num = 0;
+	long int num = 0;
 	int nb_num = 0;
 	int exit = 0;
 
