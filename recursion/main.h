@@ -10,3 +10,5 @@ void _puts_recursion(char *s);
 void _print_rev_recursion(char *s);
 /*__Task-2__*/
 int _strlen_recursion(char *s);
+/*__Task-3__*/
+int factorial(int n);
