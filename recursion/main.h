@@ -14,3 +14,7 @@ int _strlen_recursion(char *s);
 int factorial(int n);
 /*__Task-4__*/
 int _pow_recursion(int x, int y);
+/*__Task-5__*/
+int _sqrt_recursion(int n);
+/*__Task-6__*/
+int is_prime_number(int n);
