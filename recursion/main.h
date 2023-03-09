@@ -17,4 +17,5 @@ int _pow_recursion(int x, int y);
 /*__Task-5__*/
 int _sqrt_recursion(int n);
 /*__Task-6__*/
+int is_divisible(int num, int div);
 int is_prime_number(int n);
