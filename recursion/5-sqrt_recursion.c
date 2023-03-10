@@ -1,14 +1,9 @@
 #include "main.h"
-
 /**
- * _sqrt_recursion - This function returns the natural square root of a number
- * @n: the number to be checked
- * Return: the natural square root, -1 if not
- * _sqrt - Function loop
- * @nb: the nb
- * Title: 5-sqrt_recursion.c
- * Auhor: Marc Pourias
- * Date: 09/03/2023
+ * _sqrt - Function recursive
+ * @nb: the squar number
+ * @n: the number to checked
+ * Return: the square number
  */
 
 int _sqrt(int nb, int n)
@@ -21,6 +16,12 @@ int _sqrt(int nb, int n)
 
 	return (_sqrt(nb + 1, n));
 }
+
+/**
+ * _sqrt_recursion - Function to find the square
+ * @n: the number
+ * Return: the squar number
+ */
 
 int _sqrt_recursion(int n)
 {
