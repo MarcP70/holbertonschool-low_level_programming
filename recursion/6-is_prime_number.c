@@ -1,11 +1,4 @@
 #include "main.h"
-
-/**
- * Title: 6-is_prime_number.c
- * Auhor: Marc Pourias
- * Date: 09/03/2023
- */
-
 /**
  * is_divisible - Checks if a number is divisible
  * @num: The number to be checked.
