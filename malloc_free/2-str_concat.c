@@ -20,12 +20,14 @@ char *str_concat(char *s1, char *s2)
 	int len_s2 = 0;
 	int len;
 
-	if (s1 == NULL || s2 == NULL)
+	if (s1 == NULL && s2 == NULL)
 		return (NULL);
 
+	if (s1 != NULL)
 	for (i = 0; s1[i]; i++)
 		len_s1++;
 
+	if (s2 != NULL)
 	for (i = 0; s2[i]; i++)
 		len_s2++;
 
