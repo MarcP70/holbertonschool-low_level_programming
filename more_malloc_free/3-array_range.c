@@ -19,7 +19,7 @@ int *array_range(int min, int max)
 	if (min > max)
 		return (NULL);
 
-	ar = malloc((max + 1) * sizeof(int));
+	ar = malloc((max + 1) * sizeof(int *));
 	if (ar == NULL)
 		return (NULL);
 
@@ -29,5 +29,6 @@ int *array_range(int min, int max)
 		ar[j] = i;
 		j++;
 	}
+	ar[j] = '\0';
 	return (ar);
 }
