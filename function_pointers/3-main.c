@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "3-calc.h"
 /**
  * main - check the code
@@ -23,8 +24,9 @@ int main(int argc, char *argv[])
 	operator = argv[2];
 	num2 = atoi(argv[3]);
 
-	if (operator[0] != '+' && operator[0] != '-' && operator[0] != '*'
-	    && operator[0] != '/' && operator[0] != '%')
+	if ((operator[0] != '+' && operator[0] != '-' && operator[0] != '*'
+	    && operator[0] != '/' && operator[0] != '%'
+		) || strlen(operator) != 1)
 	{
 		printf("Error\n");
 		return (99);
