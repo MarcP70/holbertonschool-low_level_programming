@@ -11,14 +11,17 @@ void print_strings(const char *separator, const unsigned int n, ...)
 {
 	va_list my_list;
 	unsigned int i;
+	char *elem;
 
 	if (n != 0)
 	{
 		va_start(my_list, n);
 		for (i = 0; i < n; i++)
 		{
-			if (va_arg(my_list, char *) != NULL)
-				printf("%s", va_arg(my_list, char *));
+			elem = va_arg(my_list, char *);
+
+			if (elem != NULL)
+				printf("%s", elem);
 			else
 				printf("(nil)");
 
