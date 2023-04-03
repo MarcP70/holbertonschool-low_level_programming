@@ -4,5 +4,6 @@
 /*  Structures */
 
 /* Functions prototypes */
+int _putchar(char c);
 
 #endif
