@@ -19,5 +19,6 @@ typedef struct list_s
 
 /* Functions prototypes */
 int _putchar(char c);
+size_t print_list(const list_t *h);
 
 #endif
