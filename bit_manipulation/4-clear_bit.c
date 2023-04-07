@@ -10,13 +10,20 @@
  */
 int clear_bit(unsigned long int *n, unsigned int index)
 {
+	/* long int = 8 * 4 bits = 32 bits */
 	if (index < 32)
 	{
-		/* 1 << index = 1 x 2^index */
-		if (*n > 0)
-			*n = *n - (1 << index);
-		else
-			return (0);
+		/* check power < *n */
+		if ((1 << index) <= *n)
+		{
+			if (*n > 0)
+			{
+				/* 1 << index = 1 x 2^index */
+				*n = *n - (1 << index);
+			}
+			else
+				return (0);
+		}
 		return (1);
 	}
 	return (-1);
