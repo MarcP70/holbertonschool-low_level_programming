@@ -16,8 +16,13 @@ int get_bit(unsigned long int n, unsigned int index)
 	{
 		if (index == i)
 			return (n & 1);
+		/* shift right = rest(n/2^1) */
 		n = n >> 1;
 		i++;
 	}
-	return (-1);
+	/* unsigned long int = 32 bits max */
+	if (index < 32)
+		return (0);
+	else
+		return (-1);
 }
