@@ -1,13 +1,13 @@
+/* libraries for System Call */
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
 #include <fcntl.h>
+/* other libraries */
+#include <unistd.h>
 #include "main.h"
 
 /**
- * creat_file - Create a file with text content.
+ * create_file - Create a file with text content.
  * @filename: A pointer to the name of the file to create.
  * @text_content: A pointer to the string to write to the file.
  *
