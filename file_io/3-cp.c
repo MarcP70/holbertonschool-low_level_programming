@@ -37,16 +37,16 @@ int copy_file(const char *file_from, char *file_to)
 
 	free(buffer);
 
-	if (close(open_from) == -1)
-		return (101);
-	if (close(open_to) == -1)
-		return (102);
-
 	if (open_from == -1 || read_from == -1)
 		return (98);
 
 	if (open_to == -1 || write_to == -1)
 		return (99);
+
+	if (close(open_from) == -1)
+		return (101);
+	if (close(open_to) == -1)
+		return (102);
 
 	return (1);
 }
