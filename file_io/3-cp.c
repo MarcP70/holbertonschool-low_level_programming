@@ -18,36 +18,36 @@
 
 int copy_file(const char *file_from, char *file_to)
 {
-	ssize_t open_from, read_from, open_to, write_to;
+	int open_from, open_to, write_to;
 	char *buffer;
+	int read_from = 1;
 
-	open_from = open(file_from, O_RDONLY);
 	buffer = malloc(sizeof(char) * 1024);
 	if (buffer == NULL)
 		return (-1);
 
-	read_from = read(open_from, buffer, 1024);
-	if (open_from == -1 || read_from == -1)
-	{
-		free(buffer);
-		close(open_from);
-		return (98);
-	}
-
+	open_from = open(file_from, O_RDONLY);
 	open_to = open(file_to, O_CREAT | O_TRUNC | O_WRONLY, 0664);
-	write_to = write(open_to, buffer, read_from);
-	if (write_to == -1 || open_to == -1)
+
+	do
 	{
-		free(buffer);
-		close(open_to);
-		return (99);
-	}
+		read_from = read(open_from, buffer, 1024);
+		write_to = write(open_to, buffer, read_from);
+	} while (read_from > 0 && write_to != -1);
 
 	free(buffer);
+
 	if (close(open_from) == -1)
 		return (101);
 	if (close(open_to) == -1)
 		return (102);
+
+	if (open_from == -1 || read_from == -1)
+		return (98);
+
+	if (open_to == -1 || write_to == -1)
+		return (99);
+
 	return (1);
 }
 
