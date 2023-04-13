@@ -19,8 +19,6 @@
 int copy_file(const char *file_from, char *file_to)
 {
 	ssize_t open_from, read_from, open_to, write_to;
-	int len = 0;
-	mode_t mode = S_IRUSR | S_IWUSR;
 	char *buffer;
 
 	open_from = open(file_from, O_RDONLY);
@@ -36,7 +34,7 @@ int copy_file(const char *file_from, char *file_to)
 		return (98);
 	}
 
-	open_to = open(file_to, O_CREAT | O_TRUNC | O_WRONLY, mode);
+	open_to = open(file_to, O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	write_to = write(open_to, buffer, read_from);
 	if (write_to == -1 || open_to == -1)
 	{
