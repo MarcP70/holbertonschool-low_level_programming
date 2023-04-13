@@ -44,8 +44,10 @@ int copy_file(const char *file_from, char *file_to)
 	}
 
 	free(buffer);
-	if (close(open_from) == -1 || close(open_to) == -1)
-		return (100);
+	if (close(open_from) == -1)
+		return (101);
+	if (close(open_to) == -1)
+		return (102);
 	return (1);
 }
 
@@ -61,7 +63,7 @@ int main(int ac, char **av)
 
 	if (ac != 3)
 	{
-		dprintf(2, "Usage: cp file_from file_to/n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
@@ -69,19 +71,25 @@ int main(int ac, char **av)
 
 	if (code == 98)
 	{
-		dprintf(2, "Error: Can't read from file %s/n", av[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n"
+			, av[1]);
 		exit(98);
 	}
 
 	if (code == 99)
 	{
-		dprintf(2, "Error: Can't write to %s/n", av[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 		exit(98);
 	}
 
-	if (code == 100)
+	if (code == 101)
 	{
-		dprintf(2, "Error: Can't close to %s/n", av[2]);
+		dprintf(STDERR_FILENO, "Error: Can't close to %s\n", av[1]);
+		exit(100);
+	}
+	if (code == 102)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close to %s\n", av[2]);
 		exit(100);
 	}
 	return (0);
