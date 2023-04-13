@@ -79,7 +79,7 @@ int main(int ac, char **av)
 	if (code == 99)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
-		exit(98);
+		exit(99);
 	}
 
 	if (code == 101)
