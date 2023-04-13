@@ -24,13 +24,12 @@ int copy_file(const char *file_from, char *file_to)
 
 	buffer = malloc(sizeof(char) * 1024);
 	if (buffer == NULL)
-		return (-1);
+		return (99);
 
 	open_from = open(file_from, O_RDONLY);
 	open_to = open(file_to, O_CREAT | O_TRUNC | O_WRONLY, 0664);
 
-	do
-	{
+	do {
 		read_from = read(open_from, buffer, 1024);
 		write_to = write(open_to, buffer, read_from);
 	} while (read_from > 0 && write_to != -1);
@@ -44,9 +43,9 @@ int copy_file(const char *file_from, char *file_to)
 		return (99);
 
 	if (close(open_from) == -1)
-		return (101);
+		return (open_from);
 	if (close(open_to) == -1)
-		return (102);
+		return (open_to);
 
 	return (1);
 }
@@ -69,6 +68,9 @@ int main(int ac, char **av)
 
 	code = copy_file(av[1], av[2]);
 
+	if (code == 1)
+		exit(0);
+
 	if (code == 98)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n"
@@ -82,15 +84,8 @@ int main(int ac, char **av)
 		exit(99);
 	}
 
-	if (code == 101)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close to %s\n", av[1]);
-		exit(100);
-	}
-	if (code == 102)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close to %s\n", av[2]);
-		exit(100);
-	}
+	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", code);
+	exit(100);
+
 	return (0);
 }
